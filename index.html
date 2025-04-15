@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotive Prompt Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="prompt-generator">
+        <h1>Automotive Prompt Generator</h1>
+        
+        <div class="columns-container">
+            <!-- Perspective Column -->
+            <div class="column">
+                <label for="perspective">Perspective:</label>
+                <select id="perspective">
+                    <option value="">Select perspective</option>
+                    <option value="angle view">Angle View</option>
+                    <option value="drone view">Drone View</option>
+                    <option value="side view">Side View</option>
+                    <option value="front view">Front View</option>
+                    <option value="rear view">Rear View</option>
+                    <option value="three-quarter view">Three-Quarter View</option>
+                    <option value="low angle">Low Angle</option>
+                    <option value="high angle">High Angle</option>
+                    <option value="bird's eye">Bird's Eye</option>
+                    <option value="worm's eye">Worm's Eye</option>
+                    <option value="dynamic angle">Dynamic Angle</option>
+                    <option value="close-up detail">Close-Up Detail</option>
+                </select>
+            </div>
+            
+            <!-- Art Style Column -->
+            <div class="column">
+                <label for="art-style">Art Style:</label>
+                <select id="art-style">
+                    <option value="">Select art style</option>
+                    <option value="watercolour">Watercolour</option>
+                    <option value="realistic">Realistic</option>
+                    <option value="3D">3D</option>
+                    <option value="vector">Vector</option>
+                    <option value="sketch">Sketch</option>
+                    <option value="oil painting">Oil Painting</option>
+                    <option value="digital art">Digital Art</option>
+                    <option value="anime">Anime</option>
+                    <option value="cartoon">Cartoon</option>
+                    <option value="cyberpunk">Cyberpunk</option>
+                    <option value="steampunk">Steampunk</option>
+                    <option value="minimalist">Minimalist</option>
+                    <option value="concept art">Concept Art</option>
+                </select>
+            </div>
+            
+            <!-- Vehicle Type Column -->
+            <div class="column">
+                <label for="vehicle-type">Vehicle Type:</label>
+                <select id="vehicle-type">
+                    <option value="">Select vehicle</option>
+                    <option value="car">Car</option>
+                    <option value="motorcycle">Motorcycle</option>
+                    <option value="other">Other Vehicle</option>
+                </select>
+            </div>
+            
+            <!-- Vehicle Subtype Column (dynamic based on vehicle type) -->
+            <div class="column" id="subtype-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            
+            <!-- Brand Column -->
+            <div class="column">
+                <label for="brand">Brand/Model:</label>
+                <select id="brand">
+                    <option value="">Select brand</option>
+                    <option value="Chevrolet Z/29 SS">Chevrolet Z/29 SS</option>
+                    <option value="Mustang Ford S650">Mustang Ford S650</option>
+                    <option value="Dodge Challenger SRT8">Dodge Challenger SRT8</option>
+                    <option value="Lamborghini Huracan">Lamborghini Huracan</option>
+                    <option value="Audi R8">Audi R8</option>
+                    <option value="McLaren 650S">McLaren 650S</option>
+                    <option value="Koenigsegg CCX">Koenigsegg CCX</option>
+                    <option value="Pagani Huayra">Pagani Huayra</option>
+                    <option value="Lucid Air Sapphire">Lucid Air Sapphire</option>
+                    <option value="Bugatti Bolide">Bugatti Bolide</option>
+                    <option value="Ferrari FXX-K">Ferrari FXX-K</option>
+                    <option value="Subaru GT300">Subaru GT300</option>
+                    <option value="Jaguar CX75">Jaguar CX75</option>
+                    <option value="BMW HV8">BMW HV8</option>
+                    <option value="Viper GTR3">Viper GTR3</option>
+                    <option value="Toyota Vios">Toyota Vios</option>
+                    <option value="Toyota Landcruiser">Toyota Landcruiser</option>
+                    <option value="Toyota Rubicon">Toyota Rubicon</option>
+                    <option value="Toyota Venturer">Toyota Venturer</option>
+                    <option value="Nissan Pickup">Nissan Pickup</option>
+                    <option value="Mitsubishi Triton">Mitsubishi Triton</option>
+                    <option value="Mitsubishi Xpander">Mitsubishi Xpander</option>
+                    <option value="Mitsubishi Pajero">Mitsubishi Pajero</option>
+                    <option value="Mazda RX7">Mazda RX7</option>
+                    <option value="Honda Brio">Honda Brio</option>
+                </select>
+            </div>
+            
+            <!-- Color Column -->
+            <div class="column">
+                <label for="color">Color:</label>
+                <select id="color">
+                    <option value="">Select color</option>
+                    <option value="blue">Blue</option>
+                    <option value="white">White</option>
+                    <option value="red">Red</option>
+                    <option value="matte black">Matte Black</option>
+                    <option value="candy red">Candy Red</option>
+                    <option value="chrome">Chrome</option>
+                    <option value="iridescent">Iridescent</option>
+                    <option value="metallic gray">Metallic Gray</option>
+                    <option value="pearl white">Pearl White</option>
+                    <option value="racing green">Racing Green</option>
+                    <option value="neon yellow">Neon Yellow</option>
+                    <option value="matte olive">Matte Olive</option>
+                    <option value="carbon fiber">Carbon Fiber</option>
+                </select>
+            </div>
+            
+            <!-- Accessories Column -->
+            <div class="column">
+                <label for="accessories">Accessories:</label>
+                <select id="accessories">
+                    <option value="">Select accessories</option>
+                    <option value="with Indonesian flag in side mirror">Indonesian Flag in Side Mirror</option>
+                    <option value="with armored force">Armored Force</option>
+                    <option value="with roof rack">Roof Rack</option>
+                    <option value="with spoiler">Spoiler</option>
+                    <option value="with bull bars">Bull Bars</option>
+                    <option value="with neon underglow">Neon Underglow</option>
+                    <option value="with racing stripes">Racing Stripes</option>
+                    <option value="with roof box">Roof Box</option>
+                    <option value="with tinted windows">Tinted Windows</option>
+                    <option value="with custom rims">Custom Rims</option>
+                </select>
+            </div>
+            
+            <!-- Condition Column -->
+            <div class="column">
+                <label for="condition">Condition:</label>
+                <select id="condition">
+                    <option value="">Select condition</option>
+                    <option value="rusted barn find">Rusted Barn Find</option>
+                    <option value="new showroom condition">New Showroom Condition</option>
+                    <option value="racing battle-damaged">Racing Battle-Damaged</option>
+                    <option value="lightly used">Lightly Used</option>
+                    <option value="restored classic">Restored Classic</option>
+                    <option value="modified tuner">Modified Tuner</option>
+                    <option value="pristine original">Pristine Original</option>
+                    <option value="mud-covered offroader">Mud-Covered Offroader</option>
+                    <option value="high-mileage veteran">High-Mileage Veteran</option>
+                    <option value="pristine concours">Pristine Concours</option>
+                </select>
+            </div>
+            
+            <!-- Edition Column -->
+            <div class="column">
+                <label for="edition">Edition/Year:</label>
+                <input type="text" id="edition" placeholder="e.g., 1994, 2020">
+            </div>
+            
+            <!-- Location Column -->
+            <div class="column">
+                <label for="location">Location:</label>
+                <select id="location">
+                    <option value="">Select location</option>
+                    <option value="Tundra">Tundra</option>
+                    <option value="Desert">Desert</option>
+                    <option value="Mountains">Mountains</option>
+                    <option value="Forest">Forest</option>
+                    <option value="Jungle">Jungle</option>
+                    <option value="Savannah">Savannah</option>
+                    <option value="Arctic">Arctic</option>
+                    <option value="Urban Cityscape">Urban Cityscape</option>
+                    <option value="Village">Village</option>
+                    <option value="Countryside">Countryside</option>
+                    <option value="Beach">Beach</option>
+                    <option value="Island">Island</option>
+                    <option value="Cave">Cave</option>
+                    <option value="Riverbank">Riverbank</option>
+                    <option value="Lake">Lake</option>
+                    <option value="Ocean">Ocean</option>
+                    <option value="Swamp">Swamp</option>
+                    <option value="Canyon">Canyon</option>
+                    <option value="Waterfall">Waterfall</option>
+                    <option value="Plateau">Plateau</option>
+                    <option value="Glacier">Glacier</option>
+                    <option value="Volcano">Volcano</option>
+                </select>
+            </div>
+            
+            <!-- Sky Style Column -->
+            <div class="column">
+                <label for="sky-style">Sky Style:</label>
+                <select id="sky-style">
+                    <option value="">Select sky style</option>
+                    <option value="Clear">Clear</option>
+                    <option value="Partly Cloudy">Partly Cloudy</option>
+                    <option value="Overcast">Overcast</option>
+                    <option value="Stormy">Stormy</option>
+                    <option value="Thunderstorm">Thunderstorm</option>
+                    <option value="Cloudy">Cloudy</option>
+                    <option value="Rainy">Rainy</option>
+                    <option value="Snowy">Snowy</option>
+                    <option value="Foggy">Foggy</option>
+                    <option value="Hazy">Hazy</option>
+                    <option value="Sunny">Sunny</option>
+                    <option value="Twilight">Twilight</option>
+                    <option value="Dusk">Dusk</option>
+                    <option value="Dawn">Dawn</option>
+                    <option value="Night">Night</option>
+                    <option value="Starry">Starry</option>
+                    <option value="Misty">Misty</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="result-container">
+            <h3>Generated Prompt:</h3>
+            <textarea id="generated-prompt" readonly></textarea>
+            <div class="button-group">
+                <button id="copy-btn">Copy Prompt</button>
+                <button id="share-whatsapp">Share to WhatsApp</button>
+                <button id="randomize-btn">Randomize</button>
+                <button id="clear-btn">Clear All</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
